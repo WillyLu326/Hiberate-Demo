@@ -21,14 +21,18 @@ public class CreateStudent {
 		
 		try {
 			// Create Student Object
+			Student student = new Student("Willy", "Lu", "luzh0326@gmail.com");
 			
 			// Start Transaction
+			session.beginTransaction();
 			
 			// Save
+			session.save(student);
 			
 			// Commit Transaction
+			session.getTransaction().commit();
 			
-			
+			System.out.println("Done");
 			
 		} catch (Exception exception) {
 			exception.printStackTrace();
